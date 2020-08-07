@@ -1,3 +1,5 @@
+from constants import *
+
 class Pokemon:
 
     def __init__(self, name, level, type1, type2):
@@ -14,27 +16,26 @@ class Pokemon:
         self.current_hp = 0
         self.nature = 0
 
-        def compute_stat():
-            self.stats = {
-                HP: self.compute_hp_stat(),
-                ATTACK: self.compute_standard_stat(ATTACK),
-                DEFENSE: self.compute_standard_stat(DEFENSE),
-                SPATTACK: self.compute_standard_stat(SPATTACK),
-                SPDEFENSE: self.compute_standard_stat(SPDEFENSE),
-                SPEED: self.compute_standard_stat(SPEED)
-            }
-            pass
+    def compute_stats(self):
+        self.stats = {
+            HP: self.compute_hp_stat(),
+            ATTACK: self.compute_standard_stat(ATTACK),
+            DEFENSE: self.compute_standard_stat(DEFENSE),
+            SPATTACK: self.compute_standard_stat(SPATTACK),
+            SPDEFENSE: self.compute_standard_stat(SPDEFENSE),
+            SPEED: self.compute_standard_stat(SPEED)
+        }
+        pass
 
-        def compute_standard_stat(self, stat):
-            value1 = (2*self.baseStats[stat]+self.iv[stat]+int(self.ev[stat]/4))*self.level
-            return (int(value1/100) + 5) * NATURE_MATRIX[self.nature][stat]
-            pass
+    def compute_standard_stat(self, stat):
+        value1 = (2*self.baseStats[stat]+self.iv[stat]+int(self.ev[stat]/4))*self.level
+        return (int(value1/100) + 5 ) * NATURE_MATRIX[self.nature][stat]
+        pass
         
-        def compute_hp_stat():
-            value1 = (2*self.baseStats["HP"]+self.iv["HP"]+int(self.ev["HP"]/4))*self.level
-            return int(value1/100) + self.level + 10
-            pass
-
+    def compute_hp_stat(self):
+        value1 = (2*self.baseStats["HP"]+self.iv["HP"]+int(self.ev["HP"]/4))*self.level
+        return int(value1/100) + self.level + 10
+        pass
 
 class Attack:
 

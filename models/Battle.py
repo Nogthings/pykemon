@@ -1,3 +1,6 @@
+from constants import *
+
+
 class Battle:
 
     def __init__(self, pokemon1, pokemon2):
@@ -39,6 +42,12 @@ class Battle:
         print(self.pokemon1.name + " has " + str(self.pokemon1.current_hp) + " left!")
         print(self.pokemon2.name + " has " + str(self.pokemon2.current_hp) + " left!")
 
+    def compute_damage(attack, pokemon1, pokemon2):
+        pass
+
+    def compute_damage_modifier(attack, pokemon1, pokemon2):
+        pass
+    
 class Turn:
 
     def __init__(self):
