@@ -1,5 +1,6 @@
 from constants import *
-from models import *
+from models.Battle import *
+from models.Pokemon import *
 
 #First define pokemons with its stats
 
@@ -9,7 +10,25 @@ pokemon1.current_hp = 45
 pokemon2.current_hp = 39
 #Stats
 
-pokemon1.stats = {
+pokemon1.baseStats = {
+    HP: 45,
+    ATTACK: 49,
+    DEFENSE: 49,
+    SPATTACK: 65,
+    SPDEFENSE: 65,
+    SPEED: 45
+}
+
+pokemon1.ev = {
+    HP: 0,
+    ATTACK: 0,
+    DEFENSE: 0,
+    SPATTACK: 0,
+    SPDEFENSE: 0,
+    SPEED: 0
+}
+
+pokemon1.iv = {
     HP: 45,
     ATTACK: 49,
     DEFENSE: 49,
@@ -25,6 +44,24 @@ pokemon2.stats = {
     SPATTACK: 80,
     SPDEFENSE: 65,
     SPEED: 65
+}
+
+pokemon2.ev = {
+    HP: 0,
+    ATTACK: 0,
+    DEFENSE: 0,
+    SPATTACK: 0,
+    SPDEFENSE: 0,
+    SPEED: 0
+}
+
+pokemon2.iv = {
+    HP: 45,
+    ATTACK: 49,
+    DEFENSE: 49,
+    SPATTACK: 65,
+    SPDEFENSE: 65,
+    SPEED: 45
 }
 
 #Attacks
